@@ -30,33 +30,55 @@
         </pre>
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-items"><a href="" class="nav-link">Home</a></li>
-            <li class="nav-items"><a href="" class="nav-link">About</a></li>
             <li class="nav-items"><a href="" class="nav-link">Api</a></li>
             <li class="nav-items"><a href="" class="nav-link">Docs</a></li>
-            <li class="nav-items"><a href="" class="nav-link">Pricing</a></li>
+            {%if user.is_authenticated%}
+            <li class="nav-items"><a href="/accounts/logout" class="nav-link"   >LogOut</a></li>
+            <li class="nav-items"><a href="" class="nav-link">{{ user.get_username }}</a></li>
+            {%else%}
+            <li class="nav-items"><a href="/accounts/login" class="nav-link">login</a></li>
+            <li class="nav-items"><a href="/accounts/signup" class="nav-link">Singup</a></li>
+            {%endif%}
         </ul>
     </nav>
     <div class="back">
-
+        {%block blo%}
         <div class="section text-light">
             <center class="ver">
                 {%block content%}
+                {%if user.is_authenticated%}
                 <form action="return" method="POST">
                     <pre></pre>
                     <pre></pre>
                     <div class="input-group mb-3">
                         {%csrf_token%}
                         <input type="text" class="form-control" placeholder="Search" name="country2">
-                        <div class="input-group-append">
+                        <div class="input-group-append">                          
                             <button class="btn btn-success" type="submit">Add</button>
                         </div>
                     </div>
                     <hr>
                     <hr>
                 </form>
+                {%else%}
+                <form action="/accounts/signup">
+                    <pre></pre>
+                    <pre></pre>
+                    <div class="input-group mb-3">
+                        {%csrf_token%}
+                        <input type="text" class="form-control" placeholder="Search" name="country2">
+                        <div class="input-group-append">                          
+                            <button class="btn btn-success" type="submit">Add</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <hr>
+                </form>
+                {%endif%}
                 {%endblock%}
             </center>
         </div>
+        {%endblock%}
     </div>
     <section>
     {% block img%}
@@ -96,5 +118,4 @@
         </div>
     </footer>
 </body>
-
 </html>

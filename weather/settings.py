@@ -138,3 +138,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': '872887232412-p5tiqcjhgd7acrjpl6a2rd8kfbipjel9.apps.googleusercontent.com',
+            'secret': 'S3uliSFfs8z73t3ovscIel7E',
+            'key': ''
+        }
+    }
+}
