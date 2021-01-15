@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0 ;
+}
+body{
+    background:black;
+    overflow-x:hidden;
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+.back{
+    height: 500px;
+    background:url("https://sp.yimg.com/ib/th?&id=ODL.ef75c29aadd3d9ab1cd2de269477a0cb");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter:blur(2px);
+    
+}
+.weather-box{
+    position:fixed;
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 100px;
+}
+.ver{
+    vertical-align:middle;
+    height: 100%;
+    width: 100%;
+}
+.section{
+    position: fixed;
+    top:400;
+    width:100%; 
+    height: 100px;
+    color: #000;
+    font-family: 'Montserrat';
+    font-size: large;
+    background:#404040;
+}
+.small{
+    width:100%;
+    height: 400px;
+}
